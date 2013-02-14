@@ -24,6 +24,8 @@
     <orderEntry type="library" scope="PROVIDED" name="activeresource (v3.2.12, RVM: ruby-1.9.3-p194 [global]) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="activesupport (v3.2.12, RVM: ruby-1.9.3-p194 [global]) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="arel (v3.0.2, RVM: ruby-1.9.3-p194 [global]) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="bcrypt-ruby (v3.0.1, RVM: ruby-1.9.3-p194 [global]) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="bourne (v1.1.2, RVM: ruby-1.9.3-p194 [global]) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="builder (v3.0.4, RVM: ruby-1.9.3-p194 [global]) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="bundler (v1.2.1, RVM: ruby-1.9.3-p194 [global]) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="capybara (v1.1.2, RVM: ruby-1.9.3-p194 [global]) [gem]" level="application" />
@@ -41,7 +43,9 @@
     <orderEntry type="library" scope="PROVIDED" name="jquery-rails (v2.0.2, RVM: ruby-1.9.3-p194 [global]) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="json (v1.7.7, RVM: ruby-1.9.3-p194 [global]) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="mail (v2.4.4, RVM: ruby-1.9.3-p194 [global]) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="metaclass (v0.0.1, RVM: ruby-1.9.3-p194 [global]) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="mime-types (v1.21, RVM: ruby-1.9.3-p194 [global]) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="mocha (v0.10.5, RVM: ruby-1.9.3-p194 [global]) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="multi_json (v1.6.0, RVM: ruby-1.9.3-p194 [global]) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="nokogiri (v1.5.6, RVM: ruby-1.9.3-p194 [global]) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="pg (v0.14.1, RVM: ruby-1.9.3-p194 [global]) [gem]" level="application" />
@@ -63,6 +67,7 @@
     <orderEntry type="library" scope="PROVIDED" name="sass (v3.2.5, RVM: ruby-1.9.3-p194 [global]) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="sass-rails (v3.2.6, RVM: ruby-1.9.3-p194 [global]) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="selenium-webdriver (v2.29.0, RVM: ruby-1.9.3-p194 [global]) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="shoulda-matchers (v1.4.2, RVM: ruby-1.9.3-p194 [global]) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="sprockets (v2.2.2, RVM: ruby-1.9.3-p194 [global]) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="thor (v0.17.0, RVM: ruby-1.9.3-p194 [global]) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="tilt (v1.3.3, RVM: ruby-1.9.3-p194 [global]) [gem]" level="application" />
