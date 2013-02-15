@@ -28,6 +28,23 @@ describe "User pages" do
       end
     end
   end
+
+  describe "search availabilities" do
+    let(:user) { FactoryGirl.create(:user) }
+    before do
+      10.times { FactoryGirl.create(:room) }
+      visit root_url
+      fill_in "Email", with: user.email
+      fill_in "Password", with: user.password
+      click_button "Sign in"
+      fill_in "start_date", with: '05/13/2013'
+      fill_in "end_date", with: '05/15/2013'
+      click_on 'Search for rooms'
+    end
+
+    it { should have_selector('h2', text: 'Room availability') }
+    it { should have_selector('li', text: 'Room number') }
+  end
   
   # describe "profile page" do
   #   let(:user) { FactoryGirl.create(:user) }

@@ -1,2 +1,37 @@
 <h1>Reservations</h1>
-<p>Find me in app/views/rooms/index.html.erb</p>
+<div class="row">
+  <div class="span6 offset3">
+    <%= form_tag rooms_path, method: 'get' do %>
+      <%= label_tag "Start date" %>
+      <%= text_field_tag :start_date, params[:start_date] %>
+      <%= label_tag "End date" %>
+      <%= text_field_tag :end_date, params[:end_date] %>
+      <%= submit_tag "Search for rooms", :name => nil, class: "btn btn-large btn-primary" %>
+    <% end %>
+  </div>
+  <div class="span6 offset3">
+    <% if valid_date?(@start_date) && valid_date?(@end_date) %>
+      <h2>Room availability</h2>
+      <table>
+        <tr>
+          <td>Room number</td>
+          <td>Capacity</td>
+          <td>Availability</td>
+        </tr>
+        <% @rooms.each do |room| %>
+        <tr>
+          <td><%= room.number %></td>
+          <td><%= room.bed_count %></td>
+          <td><%= availability(room) %></td>
+          <td><%  if room.available?(@start_date, @end_date) %>
+              <%= link_to 'book this room', bookings_path(booking: {start_date: @start_date, end_date: @end_date, room_id: room.id}), method: 'post',  class: "btn btn-large btn-primary"%>
+              <% end %></td>
+        </tr>
+        <% end %>
+      </table>
+    <% else %>
+      <h2>Please enter dates in the format MM/DD/YYYY</h2>
+    <% end %>
+  </div>  
+</div>
+

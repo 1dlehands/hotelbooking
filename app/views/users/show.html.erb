@@ -1,0 +1,25 @@
+<h1>Your Account</h1>
+
+<div class="row">
+  <div class="span6 offset3">
+    <% render 'form' %>
+    <h2>Your bookings</h2>
+    <table>
+      <tr>
+        <td>Room number</td>
+        <td>Capacity</td>
+        <td>Start date</td>
+        <td>End date</td>
+      </tr>
+      <% @user.bookings.each do |booking| %>
+      <tr>
+        <td><%= booking.room.number %></td>
+        <td><%= booking.room.bed_count %></td>
+        <td><%= booking.start_date %></td>
+        <td><%= booking.end_date %></td>
+        <td><%= link_to 'Cancel this booking', "/bookings/#{booking.id}", method: 'delete',  class: "btn btn-large btn-primary"%></td>
+      </tr>
+      <% end %>
+    </table>
+  </div>
+</div>

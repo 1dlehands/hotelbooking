@@ -4,4 +4,13 @@ FactoryGirl.define do
     password "password"
     password_confirmation "password"
   end
+  
+  sequence :number do |n|
+    n
+  end
+  
+  factory :room do
+    number { generate(:number) }
+    bed_count { [1,2].sample(1) }
+  end
 end

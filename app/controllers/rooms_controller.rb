@@ -4,6 +4,9 @@ class RoomsController < ApplicationController
     if !session[:user_id]
       redirect_to '/signin'
     end
-    #if params[:start_date] && params[:end_date]
+    @rooms = Room.all
+    @start_date = params[:start_date] if params[:start_date]
+    @end_date = params[:end_date] if params[:end_date]
   end
+  
 end

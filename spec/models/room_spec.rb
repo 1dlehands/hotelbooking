@@ -9,6 +9,7 @@ describe Room do
   
   it { should respond_to(:number) }
   it { should respond_to(:bed_count) }
+  it { should respond_to(:bookings) }
 
   it { should be_valid }
 
