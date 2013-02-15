@@ -5,7 +5,7 @@ module RoomsHelper
   end
   
   def availability(room)
-    room.available?(@start_date, @stop_date) ? "open" : "booked"
+    room.available?(datetimed(@start_date), datetimed(@stop_date)) ? "open" : "booked"
   end
   
 end

@@ -23,7 +23,7 @@
           <td><%= room.number %></td>
           <td><%= room.bed_count %></td>
           <td><%= availability(room) %></td>
-          <td><%  if room.available?(@start_date, @stop_date) %>
+          <td><%  if room.available?(datetimed(@start_date), datetimed(@stop_date)) %>
               <%= link_to 'book this room', bookings_path(booking: {start_date: datetimed(@start_date), stop_date: datetimed(@stop_date), room_id: room.id}), method: 'post',  class: "btn btn-large btn-primary"%>
               <% end %></td>
         </tr>

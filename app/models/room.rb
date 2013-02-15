@@ -6,12 +6,8 @@ class Room < ActiveRecord::Base
   
   has_many :bookings
   
-  def available?(start_date, stop_date)
+  def available?(user_start_date, user_stop_date)
     outcome = true
-    user_start_date_array = start_date.split("/")
-    user_start_date = Date.new(user_start_date_array[2].to_i,user_start_date_array[0].to_i,user_start_date_array[1].to_i).to_time
-    user_stop_date_array = stop_date.split("/")
-    user_stop_date = Date.new(user_stop_date_array[2].to_i,user_stop_date_array[0].to_i,user_stop_date_array[1].to_i).to_time
     self.bookings.each do |booking|
       #behold one UGLY chunk of code!
       dates_in_order = [user_start_date, user_stop_date, booking.start_date, booking.stop_date].sort
