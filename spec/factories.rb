@@ -11,6 +11,6 @@ FactoryGirl.define do
   
   factory :room do
     number { generate(:number) }
-    bed_count { [1,2].sample(1) }
+    bed_count { [1,2].sample(1)[0] }
   end
 end

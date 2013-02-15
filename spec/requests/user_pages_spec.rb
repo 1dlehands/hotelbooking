@@ -38,18 +38,12 @@ describe "User pages" do
       fill_in "Password", with: user.password
       click_button "Sign in"
       fill_in "start_date", with: '05/13/2013'
-      fill_in "end_date", with: '05/15/2013'
+      fill_in "stop_date", with: '05/15/2013'
       click_on 'Search for rooms'
     end
 
-    it { should have_selector('h2', text: 'Room availability') }
-    it { should have_selector('li', text: 'Room number') }
+    it { should have_content('Room availability') }
+    it { should have_content('Room number') }
   end
-  
-  # describe "profile page" do
-  #   let(:user) { FactoryGirl.create(:user) }
-  #   before { visit users_path(user) }
-  #   
-  #   it { should have_selector('h1', text: user.email) }
-  # end
+
 end

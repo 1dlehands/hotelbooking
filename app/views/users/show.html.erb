@@ -16,7 +16,7 @@
         <td><%= booking.room.number %></td>
         <td><%= booking.room.bed_count %></td>
         <td><%= booking.start_date %></td>
-        <td><%= booking.end_date %></td>
+        <td><%= booking.stop_date %></td>
         <td><%= link_to 'Cancel this booking', "/bookings/#{booking.id}", method: 'delete',  class: "btn btn-large btn-primary"%></td>
       </tr>
       <% end %>

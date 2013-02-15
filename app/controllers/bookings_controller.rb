@@ -2,6 +2,7 @@ class BookingsController < ApplicationController
   def create
     booking = Booking.new(params[:booking])
     booking.user_id = session[:user_id]
+    booking.stop_date = (params[:booking][:stop_date])
     puts booking.inspect
     if booking.save
       flash[:notice] = 'Booking made!'

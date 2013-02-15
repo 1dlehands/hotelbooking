@@ -4,7 +4,7 @@ class CreateBookings < ActiveRecord::Migration
       t.integer :user_id
       t.integer :room_id
       t.datetime :start_date
-      t.datetime :end_date
+      t.datetime :stop_date
 
       t.timestamps
     end
