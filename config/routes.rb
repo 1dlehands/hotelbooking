@@ -1,8 +1,11 @@
 SendGridInn::Application.routes.draw do
+  get "rooms/index"
+
   get "users/new"
   
   resources :users, only: [:new, :create, :edit, :show, :destroy]
   resources :sessions, only: [:new, :create, :destroy]
+  resources :rooms
   
   match '/signup', to: 'users#new'
   match '/signin', to: 'sessions#new'

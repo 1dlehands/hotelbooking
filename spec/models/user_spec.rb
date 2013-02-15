@@ -14,6 +14,12 @@ describe User do
 
   it { should be_valid }
 
+  it "isn't valid if email is already in use" do
+    @user.save
+    @user2 = User.new(email: "test@email.com", password: "password", password_confirmation: "password" )
+    @user2.should_not be_valid
+  end
+
   describe "when email is not present" do
     before { @user.email = nil }
     it {should_not be_valid }
