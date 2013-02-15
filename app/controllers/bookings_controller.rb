@@ -2,11 +2,13 @@ class BookingsController < ApplicationController
   def create
     booking = Booking.new(params[:booking])
     booking.user_id = session[:user_id]
+    puts booking.inspect
     if booking.save
       flash[:notice] = 'Booking made!'
       redirect_to user_path(session[:user_id])
     else
-      render rooms_path
+      flash[:error] = booking.errors.full_messages
+      redirect_to rooms_path
     end
   end
   
