@@ -35,7 +35,7 @@ describe "User pages" do
       10.times { FactoryGirl.create(:room) }
       visit root_url
       fill_in "Email", with: user.email
-      fill_in "Password", with: user.password
+      fill_in "Password", with: user.password               a
       click_button "Sign in"
       fill_in "start_date", with: '05/13/2013'
       fill_in "stop_date", with: '05/15/2013'
