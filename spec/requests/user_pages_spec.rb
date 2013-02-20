@@ -30,20 +30,42 @@ describe "User pages" do
   end
 
   describe "search availabilities" do
-    let(:user) { FactoryGirl.create(:user) }
-    before do
-      10.times { FactoryGirl.create(:room) }
-      visit root_url
-      fill_in "Email", with: user.email
-      fill_in "Password", with: user.password               a
-      click_button "Sign in"
-      fill_in "start_date", with: '05/13/2013'
-      fill_in "stop_date", with: '05/15/2013'
-      click_on 'Search for rooms'
+    
+    context "when search dates are valid" do
+      let(:user) { FactoryGirl.create(:user) }
+      before do
+        10.times { FactoryGirl.create(:room) }
+        visit '/signin'
+        fill_in "Email", with: user.email
+        fill_in "Password", with: user.password
+        click_button "Sign in"
+        fill_in "start_date", with: "01/01/2045"
+        fill_in "stop_date", with: "01/05/2045"
+        click_on 'Search for rooms'
+      end
+
+      it { should have_content('Room availability') }
+      it { should have_content('Room number') }
+    end
+    
+    context "when search dates are in the past" do
+      let(:user) { FactoryGirl.create(:user) }
+      before do
+        10.times { FactoryGirl.create(:room) }
+        visit '/signin'
+        fill_in "Email", with: user.email
+        fill_in "Password", with: user.password
+        click_button "Sign in"
+        fill_in "start_date", with: "02/13/2013"
+        fill_in "stop_date", with: "02/14/2013"
+        click_on 'Search for rooms'
+      end
+      
+      it { should have_content("Start date can't be in the past!") }
     end
 
-    it { should have_content('Room availability') }
-    it { should have_content('Room number') }
+    #context "when start date and stop date are the same day"
+    
   end
 
 end

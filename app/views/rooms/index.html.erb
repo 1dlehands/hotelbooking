@@ -10,7 +10,14 @@
     <% end %>
   </div>
   <div class="span6 offset3">
-    <% if valid_date?(@start_date) && valid_date?(@stop_date) %>
+    <% errors = date_errors(@start_date, @stop_date) %>
+    <% if errors.count > 0 %>
+      <h2>
+        <% errors.each do |error| %>
+          <%= error %>
+        <% end %>
+      </h2>
+    <% else %>
       <h2>Room availability</h2>
       <table>
         <tr>
@@ -29,8 +36,6 @@
         </tr>
         <% end %>
       </table>
-    <% else %>
-      <h2>Please enter dates in the format MM/DD/YYYY</h2>
     <% end %>
   </div>  
 </div>
